@@ -1,0 +1,14 @@
+# core_fix-js:
+#   filter: rjsmin
+#   output: ckanext-core_fix/%(version)s-core_fix.js
+#   contents:
+#     - js/core_fix.js
+#   extra:
+#     preload:
+#       - base/main
+
+# core_fix-css:
+#   filter: cssrewrite
+#   output: ckanext-core_fix/%(version)s-core_fix.css
+#   contents:
+#     - css/core_fix.css
