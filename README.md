@@ -43,12 +43,16 @@ Use a fix name from the parentheses to disable it via `ckanext.core_fix.disable_
     https://github.com/ckan/ckan/pull/7474
 
 4. Fix secondary block order (`secondary_order`)
-    Fix primary/secondary order regression
+    Fix primary/secondary order regression.
     https://github.com/ckan/ckan/pull/7468
 
 5. Fix button icon/text gap (`button_icon_text_gap`)
-    Fix missing gap between btn icon and text
+    Fix missing gap between btn icon and text.
     https://github.com/ckan/ckan/pull/7470
+
+6. Fix mobile layout breakpoint (`mobile_layout_breakpoint`)
+    Fix improper breakpoint for mobile view after migration to bootstrap 5.
+    https://github.com/ckan/ckan/pull/7467
 
 ## Config settings
 
