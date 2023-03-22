@@ -1,21 +1,35 @@
-import ckan.plugins as plugins
+import logging
+
+import ckan.plugins as p
 import ckan.plugins.toolkit as tk
 
+import ckanext.core_fix.config as conf
+import ckanext.core_fix.utils as utils
+import ckanext.core_fix.helpers as helper
 
-from ckanext.core_fix.helpers import get_helpers
 
-class CoreFixPlugin(plugins.SingletonPlugin):
-    plugins.implements(plugins.IConfigurer)
-    plugins.implements(plugins.ITemplateHelpers)
+log = logging.getLogger(__name__)
+
+
+class CoreFixPlugin(p.SingletonPlugin):
+    p.implements(p.IConfigurer)
+    p.implements(p.ITemplateHelpers)
 
     # IConfigurer
 
     def update_config(self, config_: tk.CKANConfig):
-        tk.add_template_directory(config_, "templates")
+        if not utils.is_fix_disabled(conf.Fixes.markdown_macro):
+            tk.add_template_directory(
+                config_, f"templates/{conf.Fixes.markdown_macro.name}/"
+            )
+            utils.notify_enabled(conf.Fixes.markdown_macro)
+        else:
+            utils.notify_disabled(conf.Fixes.markdown_macro)
+
         tk.add_public_directory(config_, "public")
         tk.add_resource("assets", "core_fix")
 
     # ITemplateHelpers
 
     def get_helpers(self):
-        return get_helpers()
+        return helper.get_helpers()

@@ -5,7 +5,8 @@ from typing import Callable, Any
 
 import ckan.plugins.toolkit as tk
 
-from ckanext.core_fix.config import get_disabled_fixes
+import ckanext.core_fix.config as conf
+import ckanext.core_fix.utils as utils
 
 
 log = logging.getLogger(__name__)
@@ -30,13 +31,15 @@ def dashboard_activity_stream(
 
 
 def get_helpers():
-    disabled: list[str] = get_disabled_fixes()
     helpers: dict[str, Callable[..., Any]] = {
-        "dashboard_activity_stream": dashboard_activity_stream
+        "dashboard_activity_stream": dashboard_activity_stream,
+        "cf_is_fix_disabled": lambda x: utils.is_fix_disabled(x),
     }
 
-    if "dashboard_activity" in disabled:
+    if utils.is_fix_disabled(conf.Fixes.dashboard_activity):
         helpers.pop("dashboard_activity_stream")
-        log.warning("The `dashboard_activity` fix has been disabled")
+        utils.notify_disabled(conf.Fixes.dashboard_activity)
+    else:
+        utils.notify_enabled(conf.Fixes.dashboard_activity)
 
     return helpers
