@@ -18,3 +18,10 @@ class Fixes(Enum):
     fontawesome_icons = auto()
     secondary_order = auto()
     button_icon_text_gap = auto()
+    mobile_layout_breakpoint = auto()
+
+
+FIXES_WITH_TEMPLATES = [
+    Fixes.mobile_layout_breakpoint,
+    Fixes.markdown_macro,
+]

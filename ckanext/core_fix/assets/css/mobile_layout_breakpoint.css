@@ -1,0 +1,11 @@
+/* Mobile layout breakpoint fix: https://github.com/ckan/ckan/pull/7467 */
+
+@media (max-width: 768px) {
+    .wrapper::before {
+        display: none;
+    }
+
+    .wrapper .module > .page-header {
+        margin-top: 0;
+    }
+}

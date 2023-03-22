@@ -14,4 +14,8 @@
     {% if not h.cf_is_fix_disabled("button_icon_text_gap") %}
         {% asset 'core_fix/button_icon_text_gap' %}
     {% endif %}
+
+    {% if not h.cf_is_fix_disabled("mobile_layout_breakpoint") %}
+        {% asset 'core_fix/mobile_layout_breakpoint' %}
+    {% endif %}
 {% endblock %}

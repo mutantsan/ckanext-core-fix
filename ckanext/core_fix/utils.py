@@ -2,7 +2,9 @@ from __future__ import annotations
 
 import logging
 
-from ckanext.core_fix.config import Fixes, get_disabled_fixes
+import ckan.plugins.toolkit as tk
+
+import ckanext.core_fix.config as conf
 from ckanext.core_fix.exceptions import CoreFixException
 
 log = logging.getLogger(__name__)
@@ -10,23 +12,23 @@ log = logging.getLogger(__name__)
 
 def notify() -> None:
     """Notify about disabled/enabled fixes on startup"""
-    for fix in Fixes:
+    for fix in conf.Fixes:
         notify_disabled(fix) if is_fix_disabled(fix) else notify_enabled(fix)
 
 
-def notify_enabled(fix: Fixes) -> None:
+def notify_enabled(fix: conf.Fixes) -> None:
     log.info(f"The `{fix}` fix has been enabled")
 
 
-def notify_disabled(fix: Fixes) -> None:
+def notify_disabled(fix: conf.Fixes) -> None:
     log.info(f"The `{fix}` fix has been disabled")
 
 
 def check_disabled_fixes() -> None:
     """Check if all fixes listed as disabled are actually exists"""
-    available_fixes: list[str] = Fixes._member_names_
+    available_fixes: list[str] = conf.Fixes._member_names_
 
-    for fix in get_disabled_fixes():
+    for fix in conf.get_disabled_fixes():
         if is_fix_exist(fix):
             continue
 
@@ -35,18 +37,27 @@ def check_disabled_fixes() -> None:
         )
 
 
-def is_fix_disabled(fix: Fixes | str) -> bool:
+def is_fix_disabled(fix: conf.Fixes | str) -> bool:
     """Check if fix is disabled"""
-    fix_name: str = fix.name if isinstance(fix, Fixes) else fix
-    available_fixes: list[str] = Fixes._member_names_
+    fix_name: str = fix.name if isinstance(fix, conf.Fixes) else fix
+    available_fixes: list[str] = conf.Fixes._member_names_
 
     if fix_name not in available_fixes:
         raise CoreFixException(
             f"The fix `{fix}` doesn't exists. List of available fixes: {available_fixes}"
         )
 
-    return fix_name in get_disabled_fixes()
+    return fix_name in conf.get_disabled_fixes()
 
 
 def is_fix_exist(fix: str) -> bool:
-    return fix in Fixes._member_names_
+    return fix in conf.Fixes._member_names_
+
+
+def register_fix_templates(config_: tk.CKANConfig) -> None:
+    """Register templates for fixes with custom templates"""
+    for fix in conf.FIXES_WITH_TEMPLATES:
+        if is_fix_disabled(fix):
+            continue
+
+        tk.add_template_directory(config_, f"template_fix/{fix.name}")

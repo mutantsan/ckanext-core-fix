@@ -3,7 +3,6 @@ import logging
 import ckan.plugins as p
 import ckan.plugins.toolkit as tk
 
-import ckanext.core_fix.config as conf
 import ckanext.core_fix.utils as utils
 import ckanext.core_fix.helpers as helper
 
@@ -20,15 +19,11 @@ class CoreFixPlugin(p.SingletonPlugin):
     def update_config(self, config_: tk.CKANConfig):
         utils.check_disabled_fixes()
         utils.notify()
+        utils.register_fix_templates(config_)
 
         tk.add_template_directory(config_, "templates")
         tk.add_public_directory(config_, "public")
         tk.add_resource("assets", "core_fix")
-
-        if not utils.is_fix_disabled(conf.Fixes.markdown_macro):
-            tk.add_template_directory(
-                config_, f"templates/{conf.Fixes.markdown_macro.name}/"
-            )
 
     # ITemplateHelpers
 
