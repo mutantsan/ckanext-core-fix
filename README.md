@@ -38,6 +38,10 @@ Use a fix name from the parentheses to disable it via `ckanext.core_fix.disable_
     Fix a regression of markdown.html macro after migration to bootstrap 5.
     https://github.com/ckan/ckan/pull/7485
 
+3. Fix fontawesome icons (`fontawesome_icons`)
+    Fix missing fontawesome icons after migration to bootstrap 5.
+    https://github.com/ckan/ckan/pull/7474
+
 ## Config settings
 
 	# Provide a list of fixes names to disable it

@@ -1,0 +1,54 @@
+/* Fontawesome fix: https://github.com/ckan/ckan/pull/7474 */
+
+.fa-clock-o::before {
+    content: "\f017";
+}
+
+.fa-building-o::before {
+    content: "\f1ad";
+}
+
+.fa-map-marker::before {
+    content: "\f3c5";
+
+}
+
+.fa-file-pdf-o::before {
+    content: "\f1c1";
+}
+
+.fa-bar-chart-o::before {
+    content: "\f080";
+}
+
+.fa-file-text-o::before {
+    content: "\f15c";
+}
+
+.fa-arrow-circle-o-down::before {
+    content: "\f019";
+}
+
+.fa-pencil-square-o::before {
+    content: "\f14b";
+}
+
+.fa-picture-o::before {
+    content: "\f03e";
+}
+
+.fa-files-o::before {
+    content: "\f0c5";
+}
+
+.fa-file-video-o::before {
+    content: "\f1c8";
+}
+
+.fa-check-square-o::before {
+    content: "\f14a";
+}
+
+.fa-trash-o::before {
+    content: "\f1f8";
+}

@@ -24,6 +24,13 @@ def check_disabled_fixes() -> None:
 def is_fix_disabled(fix: Fixes | str) -> bool:
     """Check if fix is disabled"""
     fix_name: str = fix.name if isinstance(fix, Fixes) else fix
+    available_fixes: list[str] = Fixes._member_names_
+
+    if fix_name not in available_fixes:
+        raise CoreFixException(
+            f"The fix `{fix}` doesn't exists. List of available fixes: {available_fixes}"
+        )
+
     return fix_name in get_disabled_fixes()
 
 

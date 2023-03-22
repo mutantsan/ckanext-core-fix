@@ -15,3 +15,4 @@ def get_disabled_fixes() -> list[str]:
 class Fixes(Enum):
     dashboard_activity = auto()
     markdown_macro = auto()
+    fontawesome_icons = auto()

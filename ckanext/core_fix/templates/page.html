@@ -1,0 +1,9 @@
+{% ckan_extends %}
+
+{% block styles %}
+    {{ super() }}
+
+    {% if not h.cf_is_fix_disabled("fontawesome_icons") %}
+        {% asset 'core_fix/fontawesome_icons' %}
+    {% endif %}
+{% endblock %}

@@ -7,8 +7,8 @@
 #     preload:
 #       - base/main
 
-# core_fix-css:
-#   filter: cssrewrite
-#   output: ckanext-core_fix/%(version)s-core_fix.css
-#   contents:
-#     - css/core_fix.css
+fontawesome_icons:
+  filter: cssrewrite
+  output: ckanext-core_fix/%(version)s-fontawesome-icons.css
+  contents:
+    - css/fontawesome_icons.css
