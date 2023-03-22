@@ -16,3 +16,4 @@ class Fixes(Enum):
     dashboard_activity = auto()
     markdown_macro = auto()
     fontawesome_icons = auto()
+    secondary_order = auto()

@@ -42,6 +42,10 @@ Use a fix name from the parentheses to disable it via `ckanext.core_fix.disable_
     Fix missing fontawesome icons after migration to bootstrap 5.
     https://github.com/ckan/ckan/pull/7474
 
+4. Fix secondary block order (`secondary_order`)
+    Fix primary/secondary order regression
+    https://github.com/ckan/ckan/pull/7468
+
 ## Config settings
 
 	# Provide a list of fixes names to disable it

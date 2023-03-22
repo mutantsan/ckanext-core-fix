@@ -1,0 +1,8 @@
+/* Secondary order first mobile fix: https://github.com/ckan/ckan/pull/7468 */
+
+@media (max-width: 768px) {
+    .wrapper {
+        -webkit-flex-direction: column-reverse;
+        flex-direction: column-reverse;
+    }
+}

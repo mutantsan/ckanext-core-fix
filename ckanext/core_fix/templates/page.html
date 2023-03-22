@@ -6,4 +6,8 @@
     {% if not h.cf_is_fix_disabled("fontawesome_icons") %}
         {% asset 'core_fix/fontawesome_icons' %}
     {% endif %}
+
+    {% if not h.cf_is_fix_disabled("secondary_order") %}
+        {% asset 'core_fix/secondary_order' %}
+    {% endif %}
 {% endblock %}

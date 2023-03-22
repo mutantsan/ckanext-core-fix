@@ -12,3 +12,9 @@ fontawesome_icons:
   output: ckanext-core_fix/%(version)s-fontawesome-icons.css
   contents:
     - css/fontawesome_icons.css
+
+secondary_order:
+  filter: cssrewrite
+  output: ckanext-core_fix/%(version)s-secondary-order.css
+  contents:
+    - css/secondary_order.css
