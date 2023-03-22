@@ -17,3 +17,4 @@ class Fixes(Enum):
     markdown_macro = auto()
     fontawesome_icons = auto()
     secondary_order = auto()
+    button_icon_text_gap = auto()

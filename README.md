@@ -46,6 +46,10 @@ Use a fix name from the parentheses to disable it via `ckanext.core_fix.disable_
     Fix primary/secondary order regression
     https://github.com/ckan/ckan/pull/7468
 
+5. Fix button icon/text gap (`button_icon_text_gap`)
+    Fix missing gap between btn icon and text
+    https://github.com/ckan/ckan/pull/7470
+
 ## Config settings
 
 	# Provide a list of fixes names to disable it

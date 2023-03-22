@@ -18,3 +18,9 @@ secondary_order:
   output: ckanext-core_fix/%(version)s-secondary-order.css
   contents:
     - css/secondary_order.css
+
+button_icon_text_gap:
+  filter: cssrewrite
+  output: ckanext-core_fix/%(version)s-button_icon_text_gap.css
+  contents:
+    - css/button_icon_text_gap.css

@@ -10,4 +10,8 @@
     {% if not h.cf_is_fix_disabled("secondary_order") %}
         {% asset 'core_fix/secondary_order' %}
     {% endif %}
+
+    {% if not h.cf_is_fix_disabled("button_icon_text_gap") %}
+        {% asset 'core_fix/button_icon_text_gap' %}
+    {% endif %}
 {% endblock %}
