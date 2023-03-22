@@ -1,0 +1,2 @@
+class CoreFixException(Exception):
+    pass
