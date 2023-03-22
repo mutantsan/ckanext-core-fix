@@ -2,9 +2,13 @@
 
 This extensions comes to provide temprorary fixes to CKAN core that isn't yet applied, but will be (probably) applied soon.
 
-By default, all the fixes are enabled. Check the **Config settings** section to understand how to disabled specific fix.
+By default, all the fixes are enabled. Check the **List of fixes** and **Config settings**
+section to understand how to disabled specific fix.
 
 All the fixes must be associated with a PR to the CKAN core.
+
+Merged fixes could be deleted from this extension with new versions, as I don't
+want to store them forever and increase the list of disabled fixes in config.
 
 ## Requirements
 
@@ -24,10 +28,15 @@ I suggest using `pip install ckanext-core-fix` to install package. If you want t
 Add `core_fix` to `ckan.plugins` to enable the plugin.
 
 ## List of fixes
+Use a fix name from the parentheses to disable it via `ckanext.core_fix.disable_fix`
+
 1. Fix dashboard activity page (`dashboard_activity`)
 	Fix call of `dashboard_activity_stream` helper.
 	https://github.com/ckan/ckan/pull/7482
 
+2. Fix markdown macro regression (`markdown_macro`)
+    Fix a regression of markdown.html macro after migration to bootstrap 5.
+    https://github.com/ckan/ckan/pull/7485
 
 ## Config settings
 
