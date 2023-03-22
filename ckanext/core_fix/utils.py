@@ -8,6 +8,20 @@ from ckanext.core_fix.exceptions import CoreFixException
 log = logging.getLogger(__name__)
 
 
+def notify() -> None:
+    """Notify about disabled/enabled fixes on startup"""
+    for fix in Fixes:
+        notify_disabled(fix) if is_fix_disabled(fix) else notify_enabled(fix)
+
+
+def notify_enabled(fix: Fixes) -> None:
+    log.info(f"The `{fix}` fix has been enabled")
+
+
+def notify_disabled(fix: Fixes) -> None:
+    log.info(f"The `{fix}` fix has been disabled")
+
+
 def check_disabled_fixes() -> None:
     """Check if all fixes listed as disabled are actually exists"""
     available_fixes: list[str] = Fixes._member_names_
@@ -36,11 +50,3 @@ def is_fix_disabled(fix: Fixes | str) -> bool:
 
 def is_fix_exist(fix: str) -> bool:
     return fix in Fixes._member_names_
-
-
-def notify_enabled(fix: Fixes) -> None:
-    log.info(f"The `{fix}` fix has been enabled")
-
-
-def notify_disabled(fix: Fixes) -> None:
-    log.info(f"The `{fix}` fix has been disabled")

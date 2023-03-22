@@ -38,8 +38,5 @@ def get_helpers():
 
     if utils.is_fix_disabled(conf.Fixes.dashboard_activity):
         helpers.pop("dashboard_activity_stream")
-        utils.notify_disabled(conf.Fixes.dashboard_activity)
-    else:
-        utils.notify_enabled(conf.Fixes.dashboard_activity)
 
     return helpers

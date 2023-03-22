@@ -19,6 +19,7 @@ class CoreFixPlugin(p.SingletonPlugin):
 
     def update_config(self, config_: tk.CKANConfig):
         utils.check_disabled_fixes()
+        utils.notify()
 
         tk.add_template_directory(config_, "templates")
         tk.add_public_directory(config_, "public")
@@ -28,9 +29,6 @@ class CoreFixPlugin(p.SingletonPlugin):
             tk.add_template_directory(
                 config_, f"templates/{conf.Fixes.markdown_macro.name}/"
             )
-            utils.notify_enabled(conf.Fixes.markdown_macro)
-        else:
-            utils.notify_disabled(conf.Fixes.markdown_macro)
 
     # ITemplateHelpers
 
