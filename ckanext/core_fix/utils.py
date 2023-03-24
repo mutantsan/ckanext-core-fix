@@ -15,12 +15,12 @@ def notify() -> None:
     enabled: list[str] = []
     disabled: list[str] = []
 
-    for f in conf.Fixes:
+    for fix in conf.Fixes:
         disabled.append(fix.name) if is_fix_disabled(fix) else enabled.append(fix.name)
 
     log.info(
-        f"List of enabled fixes: {', '.join(enabled_fixes)}. "
-        f"List of disabled fixes: {', '.join(disabled_fixes)}"
+        f"List of enabled fixes: {', '.join(enabled)}. "
+        f"List of disabled fixes: {', '.join(disabled)}"
     )
 
 
