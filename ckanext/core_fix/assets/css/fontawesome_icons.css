@@ -52,3 +52,7 @@
 .fa-trash-o::before {
     content: "\f1f8";
 }
+
+.fa-group::before {
+    content: "\f0c0";
+}
