@@ -12,16 +12,16 @@ log = logging.getLogger(__name__)
 
 def notify() -> None:
     """Notify about disabled/enabled fixes on startup"""
-    for fix in conf.Fixes:
-        notify_disabled(fix) if is_fix_disabled(fix) else notify_enabled(fix)
+    enabled: list[str] = []
+    disabled: list[str] = []
 
+    for f in conf.Fixes:
+        disabled.append(fix.name) if is_fix_disabled(fix) else enabled.append(fix.name)
 
-def notify_enabled(fix: conf.Fixes) -> None:
-    log.info(f"The `{fix}` fix has been enabled")
-
-
-def notify_disabled(fix: conf.Fixes) -> None:
-    log.info(f"The `{fix}` fix has been disabled")
+    log.info(
+        f"List of enabled fixes: {', '.join(enabled_fixes)}. "
+        f"List of disabled fixes: {', '.join(disabled_fixes)}"
+    )
 
 
 def check_disabled_fixes() -> None:
