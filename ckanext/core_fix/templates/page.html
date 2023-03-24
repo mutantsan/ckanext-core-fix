@@ -3,23 +3,10 @@
 {% block styles %}
     {{ super() }}
 
-    {% if not h.cf_is_fix_disabled("fontawesome_icons") %}
-        {% asset 'core_fix/fontawesome_icons' %}
-    {% endif %}
-
-    {% if not h.cf_is_fix_disabled("secondary_order") %}
-        {% asset 'core_fix/secondary_order' %}
-    {% endif %}
-
-    {% if not h.cf_is_fix_disabled("button_icon_text_gap") %}
-        {% asset 'core_fix/button_icon_text_gap' %}
-    {% endif %}
-
-    {% if not h.cf_is_fix_disabled("mobile_layout_breakpoint") %}
-        {% asset 'core_fix/mobile_layout_breakpoint' %}
-    {% endif %}
-
-    {% if not h.cf_is_fix_disabled("restyle_activity") %}
-        {% asset 'core_fix/restyle_activity' %}
-    {% endif %}
+    <!-- Include fixes assets -->
+    {% for fix in h.cf_get_fixes_with_css() %}
+        {% if not h.cf_is_fix_disabled(fix) %}
+            {% asset 'core_fix/' ~ fix %}
+        {% endif %}
+    {% endfor %}
 {% endblock %}

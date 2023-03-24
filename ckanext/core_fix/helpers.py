@@ -30,10 +30,16 @@ def dashboard_activity_stream(
     return next_func(*args, **kw)
 
 
+def get_fixes_with_css() -> list[str]:
+    """Return a list of fixes name that include CSS changes"""
+    return [fix.name for fix in conf.FIXES_WITH_CSS]
+
+
 def get_helpers():
     helpers: dict[str, Callable[..., Any]] = {
         "dashboard_activity_stream": dashboard_activity_stream,
         "cf_is_fix_disabled": lambda x: utils.is_fix_disabled(x),
+        "cf_get_fixes_with_css": get_fixes_with_css,
     }
 
     if utils.is_fix_disabled(conf.Fixes.dashboard_activity):

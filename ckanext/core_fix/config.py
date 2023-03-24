@@ -25,5 +25,13 @@ class Fixes(Enum):
 FIXES_WITH_TEMPLATES = [
     Fixes.mobile_layout_breakpoint,
     Fixes.markdown_macro,
-    Fixes.restyle_activity
+    Fixes.restyle_activity,
+]
+
+FIXES_WITH_CSS = [
+    Fixes.fontawesome_icons,
+    Fixes.secondary_order,
+    Fixes.button_icon_text_gap,
+    Fixes.mobile_layout_breakpoint,
+    Fixes.restyle_activity,
 ]
