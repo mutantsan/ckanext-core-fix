@@ -18,4 +18,8 @@
     {% if not h.cf_is_fix_disabled("mobile_layout_breakpoint") %}
         {% asset 'core_fix/mobile_layout_breakpoint' %}
     {% endif %}
+
+    {% if not h.cf_is_fix_disabled("restyle_activity") %}
+        {% asset 'core_fix/restyle_activity' %}
+    {% endif %}
 {% endblock %}

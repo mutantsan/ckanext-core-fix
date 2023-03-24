@@ -30,3 +30,9 @@ mobile_layout_breakpoint:
   output: ckanext-core_fix/%(version)s-mobile_layout_breakpoint.css
   contents:
     - css/mobile_layout_breakpoint.css
+
+restyle_activity:
+  filter: cssrewrite
+  output: ckanext-core_fix/%(version)s-restyle_activity.css
+  contents:
+    - css/restyle_activity.css

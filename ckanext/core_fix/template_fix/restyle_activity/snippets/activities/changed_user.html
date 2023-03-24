@@ -1,0 +1,3 @@
+{% set content = _('{actor} updated their profile').format(actor=ah.actor(activity))|safe %}
+
+{% snippet "snippets/activities/activity_template.html", activity=activity, content=content, show_details=show_details, icon="fa-users" %}

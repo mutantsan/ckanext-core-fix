@@ -1,0 +1,4 @@
+{% set content = _('{actor} updated the group {group}').format(actor=ah.actor(activity), group=ah.group(activity))|safe %}
+{% set changes = h.url_for('activity.group_changes', id=activity.id) %}
+
+{% snippet "snippets/activities/activity_template.html", activity=activity, content=content, show_details=show_details, changes=changes, icon="fa-users" %}

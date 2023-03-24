@@ -1,0 +1,28 @@
+{#
+    Fallback template for displaying an activity.
+
+    Params:
+    activity - the Activity dict
+    show_details - whether we should render detail about the activity (i.e. "as it was" and diff, alternatively will just display the metadata about the activity)
+    id - the id or current name of the object (e.g. package name, user id)
+    ah - dict of template macros to render linked: actor, dataset, organization, user, group
+#}
+
+{% if activity.data.package %}
+    {% set entity = ah.dataset(activity) %}
+{% elif activity.data.group %}
+    {% if 'group' in activity.activity_type %}
+        {% set entity = ah.group(activity) %}
+    {% else %}
+        {% set entity = ah.organization(activity) %}
+    {% endif %}
+{% endif %}
+
+{% set content = _('{actor} {activity_type} {entity}').format(
+    actor=ah.actor(activity),
+    activity_type=activity.activity_type,
+    entity=entity
+  )|safe
+%}
+
+{% snippet "snippets/activities/activity_template.html", activity=activity, content=content, show_details=show_details, icon="fa-users" %}

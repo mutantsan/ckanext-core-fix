@@ -54,6 +54,11 @@ Use a fix name from the parentheses to disable it via `ckanext.core_fix.disable_
     Fix improper breakpoint for mobile view after migration to bootstrap 5.
     https://github.com/ckan/ckan/pull/7467
 
+
+6. Restyle activities (`restyle_activity`)
+    Restyle activities list page in a modern way
+    https://github.com/ckan/ckan/pull/7491
+
 ## Config settings
 
 	# Provide a list of fixes names to disable it

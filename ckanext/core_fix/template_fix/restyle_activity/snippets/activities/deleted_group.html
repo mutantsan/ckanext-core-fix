@@ -1,0 +1,7 @@
+{% set content = _('{actor} deleted the group {group}').format(
+    actor=ah.actor(activity),
+    group=ah.group(activity)
+  )|safe
+%}
+
+{% snippet "snippets/activities/activity_template.html", activity=activity, content=content, show_details=show_details, icon="fa-users" %}

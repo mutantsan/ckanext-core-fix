@@ -1,0 +1,12 @@
+{% set dataset_type = activity.data.package.type or 'dataset' %}
+
+{% set content = _('{actor} created the {dataset_type} {dataset}').format(
+    actor=ah.actor(activity),
+    dataset_type=h.humanize_entity_type('package', dataset_type,'activity_record') or _('dataset'),
+    dataset=ah.dataset(activity)
+  )|safe
+%}
+
+{% set version = h.url_for('activity.package_history', id=activity.object_id, activity_id=activity.id) %}
+
+{% snippet "snippets/activities/activity_template.html", activity=activity, content=content, show_details=show_details, version=version %}
