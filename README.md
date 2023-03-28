@@ -55,9 +55,13 @@ Use a fix name from the parentheses to disable it via `ckanext.core_fix.disable_
     https://github.com/ckan/ckan/pull/7467
 
 
-6. Restyle activities (`restyle_activity`)
+7. Restyle activities (`restyle_activity`)
     Restyle activities list page in a modern way
     https://github.com/ckan/ckan/pull/7491
+
+8. Fix group_list missing csrf (`group_list_csrf`)
+    Add csrf token to a dataset group list form
+    Already in master
 
 ## Config settings
 

@@ -1,0 +1,6 @@
+{% ckan_extends %}
+
+{% block group_list %}
+    {{ h.csrf_input() }}
+    {{ super() }}
+{% endblock %}

@@ -20,12 +20,14 @@ class Fixes(Enum):
     button_icon_text_gap = auto()
     mobile_layout_breakpoint = auto()
     restyle_activity = auto()
+    group_list_csrf = auto()
 
 
 FIXES_WITH_TEMPLATES = [
     Fixes.mobile_layout_breakpoint,
     Fixes.markdown_macro,
     Fixes.restyle_activity,
+    Fixes.group_list_csrf,
 ]
 
 FIXES_WITH_CSS = [
