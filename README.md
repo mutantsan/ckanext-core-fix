@@ -63,6 +63,9 @@ Use a fix name from the parentheses to disable it via `ckanext.core_fix.disable_
     Add csrf token to a dataset group list form
     Already in master
 
+8. Fix dashboard organization tab org labels and link (`dashboard_organization`)
+    Already in master
+
 ## Config settings
 
 	# Provide a list of fixes names to disable it

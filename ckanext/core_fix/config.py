@@ -21,6 +21,7 @@ class Fixes(Enum):
     mobile_layout_breakpoint = auto()
     restyle_activity = auto()
     group_list_csrf = auto()
+    dashboard_organization = auto()
 
 
 FIXES_WITH_TEMPLATES = [
@@ -28,6 +29,7 @@ FIXES_WITH_TEMPLATES = [
     Fixes.markdown_macro,
     Fixes.restyle_activity,
     Fixes.group_list_csrf,
+    Fixes.dashboard_organization,
 ]
 
 FIXES_WITH_CSS = [
