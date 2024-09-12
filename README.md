@@ -33,27 +33,32 @@ Use a fix name from the parentheses to disable it via `ckanext.core_fix.disable_
 1. Fix dashboard activity page (`dashboard_activity`)
 	Fix call of `dashboard_activity_stream` helper.
 	https://github.com/ckan/ckan/pull/7482
+    *Already in master*
 
 2. Fix markdown macro regression (`markdown_macro`)
     Fix a regression of markdown.html macro after migration to bootstrap 5.
     https://github.com/ckan/ckan/pull/7485
+    *Already in master*
 
 3. Fix fontawesome icons (`fontawesome_icons`)
     Fix missing fontawesome icons after migration to bootstrap 5.
     https://github.com/ckan/ckan/pull/7474
+    *Already in master*
 
 4. Fix secondary block order (`secondary_order`)
     Fix primary/secondary order regression.
     https://github.com/ckan/ckan/pull/7468
+    *Already in master*
 
 5. Fix button icon/text gap (`button_icon_text_gap`)
     Fix missing gap between btn icon and text.
     https://github.com/ckan/ckan/pull/7470
+    *Already in master*
 
 6. Fix mobile layout breakpoint (`mobile_layout_breakpoint`)
     Fix improper breakpoint for mobile view after migration to bootstrap 5.
     https://github.com/ckan/ckan/pull/7467
-
+    *Already in master*
 
 7. Restyle activities (`restyle_activity`)
     Restyle activities list page in a modern way
@@ -61,10 +66,10 @@ Use a fix name from the parentheses to disable it via `ckanext.core_fix.disable_
 
 8. Fix group_list missing csrf (`group_list_csrf`)
     Add csrf token to a dataset group list form
-    Already in master
+    *Already in master*
 
 8. Fix dashboard organization tab org labels and link (`dashboard_organization`)
-    Already in master
+    *Already in master*
 
 ## Config settings
 
